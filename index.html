@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <h1>Weather Dashboard</h1>
+      <p>Discover the weather in your city.</p>
+    </header>
+
+    <form id="search-form">
+      <label for="city-input">City name</label>
+
+      <div class="search-controls">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter a city..."
+          required
+        >
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    <div class="temperature-controls">
+  <button type="button" id="celsius-btn">
+    °C
+  </button>
+
+  <button type="button" id="fahrenheit-btn">
+    °F
+  </button>
+</div>
+
+    <p id="status-message" role="status" aria-live="polite"></p>
+
+    <section id="weather-container" aria-label="Weather information">
+      <p>Search for a city to see its weather.</p>
+    </section>
+  </main>
+</body>
+</html>

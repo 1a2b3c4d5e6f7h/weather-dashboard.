@@ -1,0 +1,212 @@
+
+/* 1. Make sizing predictable */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* 2. Main dashboard layout */
+.dashboard {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 24px;
+}
+
+/* 3. Header */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  margin-bottom: 8px;
+  color: #1d4ed8;
+}
+
+.dashboard-header p {
+  margin-top: 0;
+  color: #6b7280;
+}
+
+/* 4. Search form */
+#search-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#search-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+}
+
+#city-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 5. Loading and error messages */
+#status-message {
+  min-height: 24px;
+  margin: 20px 0;
+  text-align: center;
+  color: #475569;
+}
+
+#status-message.error {
+  color: #dc2626;
+}
+
+/* 6. Weather display area */
+#weather-container {
+  margin-top: 24px;
+}
+
+.weather-card {
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+}
+
+.weather-main {
+  text-align: center;
+}
+
+.temperature {
+  margin: 12px 0;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.weather-detail {
+  padding: 16px;
+  background: #f3f6fb;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.weather-detail p {
+  margin: 4px 0;
+}
+
+/* 7. Adapt the layout for small screens */
+@media (max-width: 500px) {
+  .dashboard {
+    width: 100%;
+    margin: 16px auto;
+    padding: 16px;
+  }
+
+  .search-controls {
+    flex-direction: column;
+  }
+
+  .temperature {
+    font-size: 40px;
+  }
+
+  .weather-card {
+    padding: 16px;
+  }
+}
+
+
+.forecast-section {
+  margin-top: 32px;
+}
+
+.forecast-section h2 {
+  margin-bottom: 16px;
+}
+
+.forecast-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(140px, 1fr)
+  );
+  gap: 16px;
+}
+
+.forecast-card {
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+}
+
+.forecast-card h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.forecast-temperatures {
+  font-weight: bold;
+  font-size: 18px;
+}
+.temperature-controls button[aria-pressed="true"] {
+  background-color: #ff0be7;
+  color: white;
+  border-color: #3538fb;
+  padding: 10px;
+  margin-left: 20px;
+  width: 150px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.temperature-controls button[aria-pressed="false"] {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  margin-left: 20px;
+}
+.temperature-controls button:focus-visible {
+  outline: 3px solid #d309f2;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px #09f2db;
+}
